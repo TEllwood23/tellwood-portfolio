@@ -1,0 +1,14 @@
+/* styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+body {
+  @apply bg-gray-100 text-gray-900;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Add any additional global styles here */
