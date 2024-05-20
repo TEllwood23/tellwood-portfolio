@@ -1,10 +1,13 @@
-export default function Home() {
+// pages/index.tsx
+import Container from '../components/Container';
+
+const HomePage = () => {
   return (
-    <>
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
-        <h1 className="text-3xl font-bold">Hello, Next.js with Tailwind CSS and TypeScript!</h1>
-        <button className="btn-primary mt-4">Click Me</button>
-      </div>
-    </>
-);
-}
+    <Container bgColor="bg-blue-100">
+      <h1>Welcome to My Next.js App</h1>
+      <p>This is the homepage.</p>
+    </Container>
+  );
+};
+
+export default HomePage;

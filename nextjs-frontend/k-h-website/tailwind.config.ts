@@ -7,7 +7,15 @@ const config: Config = {
     "./src/styles/**/*.{css,scss}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      container: {
+        center: true,
+        padding: '2rem',
+      },
+      screens: {
+        '2xl': '1280px',
+      },
+    },
   },
   plugins: [],
 };
