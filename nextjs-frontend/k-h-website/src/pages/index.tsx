@@ -1,7 +1,7 @@
 // k-h-website/src/pages/index.tsx
 import { useEffect, useState } from 'react';
 import Container from '../components/Container';
-import { fetchData } from '../../services/api';
+import { fetchData } from '../services/api';
 
 interface DataItem {
   id: number;
