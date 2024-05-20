@@ -1,7 +1,10 @@
 export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold">Hello, Next.js with Tailwind CSS and TypeScript!</h1>
-    </div>
-  )
+    <>
+      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <h1 className="text-3xl font-bold">Hello, Next.js with Tailwind CSS and TypeScript!</h1>
+        <button className="btn-primary mt-4">Click Me</button>
+      </div>
+    </>
+);
 }

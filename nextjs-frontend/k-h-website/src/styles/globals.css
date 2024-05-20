@@ -6,9 +6,15 @@
 
 /* Custom global styles */
 body {
-  @apply bg-gray-100 text-gray-900;
   margin: 0;
   font-family: 'Inter', sans-serif;
+  color: blue;
 }
 
 /* Add any additional global styles here */
+
+
+/* Custom Button Styles */
+.btn-primary {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
