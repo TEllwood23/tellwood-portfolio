@@ -1,7 +1,8 @@
 const API_BASE_URL: string = process.env.NEXT_PUBLIC_API_BASE_URL as string;
 
 interface DataItem {
-  message: string;
+  id: number;
+  name: string;
   // Add other fields as needed
 }
 
@@ -13,7 +14,7 @@ export const fetchData = async (): Promise<DataItem[]> => {
     }
     const data: DataItem[] = await response.json();
     return data;
-  } catch (error: any) { // Type assertion for error
+  } catch (error: any) {
     console.error('Fetch error:', error);
     throw error;
   }

@@ -1,4 +1,3 @@
-// k-h-website/src/pages/index.tsx
 import { useEffect, useState } from 'react';
 import Container from '../components/Container';
 import { fetchData } from '../services/api';
@@ -19,7 +18,7 @@ const HomePage = () => {
       try {
         const data = await fetchData();
         setData(data);
-      } catch (error) {
+      } catch (error: any) {
         setError(error.message);
       } finally {
         setLoading(false);
@@ -38,7 +37,7 @@ const HomePage = () => {
       <p>This is the homepage.</p>
       <div>
         <h2>Fetched Data:</h2>
-        {data.map((item) => (
+        {Array.isArray(data) && data.map((item) => (
           <div key={item.id}>
             <p>{item.name}</p>
             {/* Display other fields as needed */}
