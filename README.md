@@ -1,2 +1,2 @@
-# k-h-website
-Performer portfolio website. Tech Stack: NextJS, Tailwind CSS, ExpressJS
+# tellwood-portfolio
+Portfolio Site, built with NextJS, React, Tailwind CSS & ExpressJS
