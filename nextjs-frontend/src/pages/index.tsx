@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import Container from '../components/Container';
 import Header from '../components/Header';
+import ScrollDownMessage from '../components/ScrollDownMessage';
+import MainContent from '../components/MainContent';
 import { fetchData } from '../services/api';
 
 interface DataItem {
@@ -36,8 +38,8 @@ const HomePage: React.FC = () => {
   return (
     <Container bgColor="bg-blue-100">
       <Header />
-      <h1>Welcome to My Next.js App</h1>
-      <p>This is the homepage- it is now working.</p>
+      <ScrollDownMessage />
+      <MainContent />
       <div>
         <h2>Fetched Data:</h2>
         {Array.isArray(data) && data.map((item) => (

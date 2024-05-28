@@ -5,13 +5,19 @@
 @tailwind utilities;
 
 /* Custom global styles */
-body {
+html, body {
+  scroll-behavior: smooth;
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  color: red;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
 }
 
 /* Add any additional global styles here */
+
+.fixed-background {
+  background-attachment: fixed;
+}
 
 
 /* Custom Button Styles */
