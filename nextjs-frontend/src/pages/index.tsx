@@ -8,7 +8,7 @@ interface DataItem {
   // Add other fields as needed
 }
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   const [data, setData] = useState<DataItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -35,7 +35,7 @@ const HomePage = () => {
   return (
     <Container bgColor="bg-blue-100">
       <h1>Welcome to My Next.js App</h1>
-      <p>This is the homepage.</p>
+      <p>This is the homepage- it is now working.</p>
       <div>
         <h2>Fetched Data:</h2>
         {Array.isArray(data) && data.map((item) => (

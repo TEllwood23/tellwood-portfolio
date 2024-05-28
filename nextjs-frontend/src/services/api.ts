@@ -8,7 +8,7 @@ interface DataItem {
 
 export const fetchData = async (): Promise<DataItem[]> => {
   try {
-    const response: Response = await fetch(`${API_BASE_URL}/`);
+    const response: Response = await fetch(`${API_BASE_URL}/api/`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
