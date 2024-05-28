@@ -24,3 +24,45 @@ html, body {
 .btn-primary {
   @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
 }
+
+/* container styles */
+
+.container.relative {
+  position: relative;
+}
+
+.container-absolute {
+  position: absolute;
+}
+
+.container-inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.container-bg-cover {
+  background-size: cover;
+}
+
+.container-bg-center {
+  background-position: center;
+}
+
+.container-z-0 {
+  z-index: 0;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p-4 {
+  padding: 1rem;
+}

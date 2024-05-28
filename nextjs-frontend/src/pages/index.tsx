@@ -36,9 +36,11 @@ const HomePage: React.FC = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <Container maxWidth="max-w-3xl" backgroundImage="/images/Background-image.jpg">
-      <Header />
-      <ScrollDownMessage />
+    <Container maxWidth="max-w-3xl" backgroundImage="/images/Background-image.jpg" backgroundOpacity={0.5}>
+      <div className="flex flex-col items-center justify-center h-screen">
+        <Header />
+        <ScrollDownMessage />
+      </div>
       <MainContent />
       <div>
         <h2>Fetched Data:</h2>
