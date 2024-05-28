@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <Container bgColor="bg-blue-100">
+    <Container maxWidth="max-w-3xl" backgroundImage="/images/Background-image.jpg">
       <Header />
       <ScrollDownMessage />
       <MainContent />

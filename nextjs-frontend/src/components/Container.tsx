@@ -7,10 +7,13 @@ interface ContainerProps {
   backgroundImage?: string;
 }
 
-const Container: React.FC<ContainerProps> = ({ children, bgColor = 'bg-white', maxWidth = 'max-w-4xl', backgroundImage }) => {
-  const backgroundStyle = backgroundImage ? { backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {};
+const Container: React.FC<ContainerProps> = ({ children, bgColor = 'bg-white', maxWidth = 'max-w-1440', backgroundImage }) => {
+  const backgroundStyle = backgroundImage
+    ? { backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }
+    : {};
+
   return (
-    <div className={`${bgColor} ${maxWidth} mx-auto p-4`} style={backgroundStyle}>
+    <div className={`relative ${bgColor} ${maxWidth} mx-auto`} style={backgroundStyle}>
       {children}
     </div>
   );
