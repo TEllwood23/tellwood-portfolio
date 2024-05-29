@@ -31,7 +31,46 @@
 
 
 // components/Container.tsx
+import React, { ReactNode } from 'react';
+
+interface ContainerProps {
+  children: ReactNode;
+  bgColor?: string;
+  maxWidth?: string;
+  backgroundImage?: string;
+  backgroundOpacity?: number;
+}
+
+const Container: React.FC<ContainerProps> = ({
+  children,
+  bgColor = 'bg-white',
+  maxWidth = 'max-w-1440',
+  backgroundImage,
+  backgroundOpacity = 0.8,
+}) => {
+  return (
+    <div className={`relative ${bgColor} ${maxWidth} mx-auto p-4`}>
+      {backgroundImage && (
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            opacity: backgroundOpacity,
+          }}
+        />
+      )}
+      <div className="relative z-10">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default Container;
+
+// // components/Container.tsx
 // import React, { ReactNode } from 'react';
+// import { Parallax } from 'react-scroll-parallax';
 
 // interface ContainerProps {
 //   children: ReactNode;
@@ -44,15 +83,59 @@
 // const Container: React.FC<ContainerProps> = ({
 //   children,
 //   bgColor = 'bg-white',
-//   maxWidth = 'max-w-1440',
+//   maxWidth = 'max-w-3xl',
 //   backgroundImage,
 //   backgroundOpacity = 0.8,
 // }) => {
 //   return (
-//     <div className={`relative ${bgColor} ${maxWidth} mx-auto p-4`}>
+//     <Parallax className="custom-class" y={[-30, 30]} tagOuter="div">
+//       <div className={`relative ${bgColor} ${maxWidth} mx-auto p-4`}>
+//         {backgroundImage && (
+//           <div
+//             className="absolute inset-0 bg-cover bg-center z-0 fixed-background"
+//             style={{
+//               backgroundImage: `url(${backgroundImage})`,
+//               opacity: backgroundOpacity,
+//             }}
+//           />
+//         )}
+//         <div className="relative z-10">
+//           {children}
+//         </div>
+//       </div>
+//     </Parallax>
+//   );
+// };
+
+// export default Container;
+
+// import React, { ReactNode } from 'react';
+// import { useParallax } from 'react-scroll-parallax';
+
+// interface ContainerProps {
+//   children: ReactNode;
+//   bgColor?: string;
+//   maxWidth?: string;
+//   backgroundImage?: string;
+//   backgroundOpacity?: number;
+// }
+
+// const Container: React.FC<ContainerProps> = ({
+//   children,
+//   bgColor = 'bg-white',
+//   maxWidth = 'max-w-3xl',
+//   backgroundImage,
+//   backgroundOpacity = 0.8,
+// }) => {
+//   const parallax = useParallax({
+//     speed: -30,
+//   });
+
+//   return (
+//     <div ref={parallax.ref} className={`relative ${bgColor} ${maxWidth} mx-auto p-4`}>
 //       {backgroundImage && (
 //         <div
-//           className="absolute inset-0 bg-cover bg-center z-0"
+//           className="absolute inset-0 bg-cover bg-center z-0 fixed-background"
 //           style={{
 //             backgroundImage: `url(${backgroundImage})`,
 //             opacity: backgroundOpacity,
@@ -68,40 +151,42 @@
 
 // export default Container;
 
-// components/Container.tsx
-import React, { ReactNode } from 'react';
+// import React, { ReactNode } from 'react';
+// import { useParallax } from 'react-scroll-parallax';
 
-interface ContainerProps {
-  children: ReactNode;
-  bgColor?: string;
-  maxWidth?: string;
-  backgroundImage?: string;
-  backgroundOpacity?: number;
-}
+// interface ContainerProps {
+//   children: ReactNode;
+//   bgColor?: string;
+//   maxWidth?: string;
+//   backgroundImage?: string;
+//   backgroundOpacity?: number;
+// }
 
-const Container: React.FC<ContainerProps> = ({
-  children,
-  bgColor = 'bg-white',
-  maxWidth = 'max-w-3xl',
-  backgroundImage,
-  backgroundOpacity = 0.8,
-}) => {
-  return (
-    <div className={`relative ${bgColor} ${maxWidth} mx-auto p-4`}>
-      {backgroundImage && (
-        <div
-          className="absolute inset-0 bg-cover bg-center z-0 fixed-background"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-            opacity: backgroundOpacity,
-          }}
-        />
-      )}
-      <div className="relative z-10">
-        {children}
-      </div>
-    </div>
-  );
-};
+// const Container: React.FC<ContainerProps> = ({
+//   children,
+//   bgColor = 'bg-white',
+//   maxWidth = 'max-w-3xl',
+//   backgroundImage,
+//   backgroundOpacity = 0.8,
+// }) => {
+//   const parallax = useParallax({ speed: -30 });
 
-export default Container;
+//   return (
+//     <div ref={parallax.ref} className={`relative ${bgColor} ${maxWidth} mx-auto p-4`}>
+//       {backgroundImage && (
+//         <div
+//           className="absolute inset-0 bg-cover bg-center z-0 fixed-background"
+//           style={{
+//             backgroundImage: `url(${backgroundImage})`,
+//             opacity: backgroundOpacity,
+//           }}
+//         />
+//       )}
+//       <div className="relative z-10">
+//         {children}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Container;
