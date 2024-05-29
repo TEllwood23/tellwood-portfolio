@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Akaya Telivigala', 'sans-serif'], // Use the imported font
+      },
       container: {
         center: true,
         padding: '2rem',
