@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .font-outline-1 {
+    -webkit-text-stroke: 1px black;
+  }
+  .font-outline-1 {
+    -webkit-text-stroke: 1px black;
+  }
+}
+
 /* Custom global styles */
 html, body {
   scroll-behavior: smooth;
