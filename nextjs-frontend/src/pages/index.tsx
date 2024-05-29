@@ -335,8 +335,8 @@ const HomePage: React.FC = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 overflow-hidden">
-      <Container maxWidth="max-w-3xl" backgroundImage="/images/Background-image.jpg" backgroundOpacity={0.5}>
+    <div className="flex items-center justify-center bg-white-100 overflow-hidden">
+      <Container maxWidth="max-w-6xl" backgroundImage="/images/Background-image.jpg" backgroundOpacity={0.5}>
         <div className="flex flex-col items-center justify-center min-h-screen">
           <Header />
           <ScrollDownMessage />
