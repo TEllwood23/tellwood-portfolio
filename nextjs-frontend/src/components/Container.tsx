@@ -59,7 +59,7 @@ const Container: React.FC<ContainerProps> = ({
           }}
         />
       )}
-      <div className="relative z-10">
+      <div className="relative z-10 justify-center">
         {children}
       </div>
     </div>
