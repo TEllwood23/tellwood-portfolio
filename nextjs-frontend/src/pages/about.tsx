@@ -1,5 +1,6 @@
 import Container from '../components/Container';
 import Carousel from '../components/Carousel';
+import OnlyClient from '../components/OnlyClient';
 
 const AboutPage = () => {
   return (
@@ -7,7 +8,9 @@ const AboutPage = () => {
     //   <h1>Welcome to My Next.js App</h1>
     //   <p>This is the about page.</p>
     // </Container>
-    <Carousel />
+    <OnlyClient>
+      <Carousel />
+    </OnlyClient>
   );
 };
 

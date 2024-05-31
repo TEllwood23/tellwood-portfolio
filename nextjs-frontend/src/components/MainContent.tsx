@@ -2,7 +2,7 @@
 
 import React from 'react';
 import AboutMeCard from '../components/AboutMeCard'
-import Carousel from '../components/Carousel'
+import Carousel from './Carousel.1';
 
 const MainContent: React.FC = () => {
   return (

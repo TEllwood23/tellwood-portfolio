@@ -1,8 +1,4 @@
-// components/Carousel.tsx
-
-'use client'
-
-import { useState, useRef, useEffect } from 'react'
+import {useRef, useState, useEffect, useCallback } from 'react'
 import { Transition } from '@headlessui/react'
 import Image, { StaticImageData } from 'next/image'
 
@@ -25,7 +21,7 @@ const items: Item[] = [
   { img: Img3, desc: 'Project 3', buttonIcon: Icon3 },
 ]
 
-export default function Carousel() {
+const Carousel = () => {
   const duration = 5000
   const itemsRef = useRef<HTMLDivElement>(null)
   const frame = useRef<number>(0)
@@ -33,13 +29,7 @@ export default function Carousel() {
   const [active, setActive] = useState<number>(0)
   const [progress, setProgress] = useState<number>(0)
 
-  useEffect(() => {
-    firstFrameTime.current = performance.now()
-    frame.current = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(frame.current)
-  }, [active])
-
-  const animate = (now: number) => {
+  const animate = useCallback((now: number) => {
     let timeFraction = (now - firstFrameTime.current) / duration
     if (timeFraction <= 1) {
       setProgress(timeFraction * 100)
@@ -48,7 +38,13 @@ export default function Carousel() {
       setProgress(0)
       setActive((active + 1) % items.length)
     }
-  }
+  }, [active, duration, items.length])
+
+  useEffect(() => {
+    firstFrameTime.current = performance.now()
+    frame.current = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(frame.current)
+  }, [animate])
 
   const heightFix = () => {
     if (itemsRef.current?.parentElement) {
@@ -101,3 +97,5 @@ export default function Carousel() {
     </div>
   )
 }
+
+export default Carousel
