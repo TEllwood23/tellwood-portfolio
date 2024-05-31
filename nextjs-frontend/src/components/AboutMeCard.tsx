@@ -7,7 +7,7 @@ const AboutMeCard: React.FC = () => {
       <div className="ml-2 mr-5">
         <h2 className="text-2xl font-bold mb-4">Meet Me...</h2>
         <p className="text-sm ">
-          I am a web developer with a passion for building beautiful and functional applications. I have experience with various technologies and enjoy learning new things.
+          I am a web developer with a passion for building functional applications. I have experience with various technologies and enjoy learning new things.
         </p>
           <div>Languages Icons</div>
       </div>

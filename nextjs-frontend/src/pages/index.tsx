@@ -346,11 +346,11 @@ const HomePage: React.FC = () => {
         </div>
         <MainContent />
         <div>
+          {/* 'Fetched Data' jsut placeholder to test database */}
           <h2>Fetched Data:</h2>
           {Array.isArray(data) && data.map((item) => (
             <div key={item.id}>
               <p>{item.name}</p>
-              {/* Display other fields as needed */}
             </div>
           ))}
         </div>

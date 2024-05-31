@@ -1,4 +1,5 @@
 // components/OnlyClient.tsx
+// built to try de-bug Carousel
 
 import { useEffect, useState, ReactNode } from 'react'
 

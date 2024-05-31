@@ -2,7 +2,7 @@
 
 import React from 'react';
 import AboutMeCard from '../components/AboutMeCard'
-import Carousel from './Carousel.1';
+import Carousel from '../components/Carousel'
 
 const MainContent: React.FC = () => {
   return (
@@ -12,7 +12,9 @@ const MainContent: React.FC = () => {
             border border-black shadow-md">
           <div className="basis-1/5">
           <AboutMeCard />
-          {/* <Carousel /> */}
+
+{/*Carousel intended to go here, but currently rendering on "About Page" until it is working */}
+
           </div>
         </div>
       </div>

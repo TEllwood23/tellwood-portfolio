@@ -8,6 +8,9 @@ const AboutPage = () => {
     //   <h1>Welcome to My Next.js App</h1>
     //   <p>This is the about page.</p>
     // </Container>
+
+    //Rendering Carousel here while I try to get this feature to work
+    //Wrapped in "OnlyClient" component as part fo effort to de-bug
     <OnlyClient>
       <Carousel />
     </OnlyClient>
