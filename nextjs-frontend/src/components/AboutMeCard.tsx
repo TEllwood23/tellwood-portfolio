@@ -5,7 +5,7 @@ const AboutMeCard: React.FC = () => {
   return (
     <div className="flex flex-row bg-white m-2 p-2 mx-auto">
       <div className="ml-2 mr-5">
-        <h2 className="text-2xl font-bold mb-4">About Me</h2>
+        <h2 className="text-2xl font-bold mb-4">Meet Me...</h2>
         <p className="text-sm ">
           I am a web developer with a passion for building beautiful and functional applications. I have experience with various technologies and enjoy learning new things.
         </p>
