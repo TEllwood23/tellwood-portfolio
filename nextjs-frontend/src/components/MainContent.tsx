@@ -1,5 +1,8 @@
+'use client'
+
 import React from 'react';
 import AboutMeCard from '../components/AboutMeCard'
+import Carousel from '../components/Carousel'
 
 const MainContent: React.FC = () => {
   return (
@@ -9,6 +12,7 @@ const MainContent: React.FC = () => {
             border border-black shadow-md">
           <div className="basis-1/5">
           <AboutMeCard />
+          {/* <Carousel /> */}
           </div>
         </div>
       </div>

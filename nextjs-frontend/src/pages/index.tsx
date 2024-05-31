@@ -298,6 +298,9 @@
 
 // export default HomePage;
 
+
+'use client'
+
 import { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import ScrollDownMessage from '../components/ScrollDownMessage';
