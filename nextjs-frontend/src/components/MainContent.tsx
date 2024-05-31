@@ -1,16 +1,14 @@
 import React from 'react';
-import Container from './Container';
+import AboutMeCard from '../components/AboutMeCard'
 
 const MainContent: React.FC = () => {
   return (
-      <div className="relative z-20 p-8 mt-96">
-        <h2 className="text-3xl font-bold mb-4">Main Content</h2>
-        <div className="block p-6 max-w-sm
+      <div className="relative z-20 mt-96">
+        <div className="flex flex-row min-h-100 relative -2 block max-w-sm
             bg-white rounded-lg
             border border-black shadow-md">
-          <div className="block p-6 max-w-sm
-              bg-white rounded-lg
-              border border-black shadow-md">
+          <div className="basis-1/5">
+          <AboutMeCard />
           </div>
         </div>
       </div>
