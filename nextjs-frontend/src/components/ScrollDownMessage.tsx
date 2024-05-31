@@ -9,6 +9,9 @@ const ScrollDownMessage: React.FC = () => {
         </a>
       </div>
       <div className="font-outline-1 text-white text-xl mt-4 animate-bounce">
+      Portfolio
+    </div>
+      <div className="font-outline-1 text-white text-xl mt-4 animate-bounce">
       Contact Me
     </div>
     </div>
