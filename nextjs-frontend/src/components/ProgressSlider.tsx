@@ -15,7 +15,10 @@ import SilderIcon04 from '/public/images/Icon_4.svg';
 
 export default function ProgressSlider() {
 
+  const duration: number = 5000
   const itemsRef = useRef<HTMLDivElement>(null)
+  const frame = useRef<number>(0)
+  const firstFrameTime = useRef(performance.now())
   const [active, setActive] = useState<number>(0)
 
   const items = [
@@ -40,6 +43,24 @@ export default function ProgressSlider() {
       buttonIcon: SilderIcon04,
       },
       ]
+
+      useEffect(() => {
+        firstFrameTime.current = performance.now()
+        frame.current = requestAnimationFrame(animate)
+        return () => {
+          cancelAnimationFrame(frame.current)
+        }
+      }, [active])
+
+      const animate = (now: number) => {
+        let timeFraction = (now - firstFrameTime.current) / duration
+        if (timeFraction <= 1) {
+          frame.current = requestAnimationFrame(animate)
+        } else {
+          timeFraction = 1
+          setActive((active + 1) % items.length)
+        }
+      }
 
       const heightFix = () => {
         if (itemsRef.current?.parentElement) {
@@ -84,6 +105,7 @@ export default function ProgressSlider() {
           <button
             key={index}
             className="p-2 rounded focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 group"
+            onClick={() => { setActive(index) }}
           >
             <span className="text-center flex flex-col items-center">
               <span className="flex items-center justify-center relative w-9 h-9 rounded-full bg-indigo-100 mb-2">
