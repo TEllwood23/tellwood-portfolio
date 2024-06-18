@@ -81,7 +81,7 @@ export default function ProgressSlider() {
     <div className="w-full max-w-5xl mx-auto text-center">
       {/* Item image */}
       <div className="transition-all duration-150 delay-300 ease-in-out">
-        <div className="relative flex flex-col" ref={itemsRef}>
+        <div className="relative flex flex-col items-center" ref={itemsRef}>
 
           {items.map((item, index) => (
             <Transition
@@ -94,15 +94,17 @@ export default function ProgressSlider() {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
             beforeEnter={() => heightFix()}
+            as="div"
+            className="flex justify-center"
           >
-              <Image
-                className="rounded-xl m-4"
-                src={item.img}
-                alt={item.desc}
-                layout="responsive"
-                width={256}
-                height={144}
-                />
+                <Image
+                  className="rounded-xl m-4"
+                  src={item.img}
+                  alt={item.desc}
+                  // layout="responsive"
+                  width={512}
+                  height={288}
+                  />
             </Transition>
           ))}
 
