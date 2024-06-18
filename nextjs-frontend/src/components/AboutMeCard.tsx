@@ -20,6 +20,7 @@ const AboutMeCard: React.FC = () => {
             className="rounded-lg border-black border-10"
           />
         </div>
+
     </div>
   );
 };

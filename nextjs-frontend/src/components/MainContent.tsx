@@ -3,6 +3,7 @@
 import React from 'react';
 import AboutMeCard from '../components/AboutMeCard'
 import Carousel from '../components/Carousel'
+import ProgressSlider from '../components/ProgressSlider';
 
 const MainContent: React.FC = () => {
   return (
@@ -12,6 +13,10 @@ const MainContent: React.FC = () => {
             border border-black shadow-md">
           <div className="basis-1/5">
           <AboutMeCard />
+          <div>
+            <ProgressSlider />
+          </div>
+
 
 {/*Carousel intended to go here, but currently rendering on "About Page" until it is working */}
 
