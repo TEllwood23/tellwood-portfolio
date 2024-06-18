@@ -15,11 +15,12 @@ import SilderIcon04 from '/public/images/Icon_4.svg';
 
 export default function ProgressSlider() {
 
-  const duration: number = 5000
+  const duration: number = 3500
   const itemsRef = useRef<HTMLDivElement>(null)
   const frame = useRef<number>(0)
   const firstFrameTime = useRef(performance.now())
   const [active, setActive] = useState<number>(0)
+  const [progress, setProgress] = useState<number>(0)
 
   const items = [
     {
@@ -27,7 +28,7 @@ export default function ProgressSlider() {
       desc: 'Omnichannel',
       buttonIcon: SilderIcon01,
     },
-    {
+      {
       img: SilderImg02,
       desc: 'Multilingual',
       buttonIcon: SilderIcon02,
@@ -55,9 +56,11 @@ export default function ProgressSlider() {
       const animate = (now: number) => {
         let timeFraction = (now - firstFrameTime.current) / duration
         if (timeFraction <= 1) {
+          setProgress(timeFraction * 100)
           frame.current = requestAnimationFrame(animate)
         } else {
           timeFraction = 1
+          setProgress(0)
           setActive((active + 1) % items.length)
         }
       }
@@ -92,7 +95,14 @@ export default function ProgressSlider() {
             leaveTo="opacity-0 scale-95"
             beforeEnter={() => heightFix()}
           >
-              <Image className="rounded-xl" src={item.img} width={1024} height={576} alt={item.desc} />
+              <Image
+                className="rounded-xl m-4"
+                src={item.img}
+                alt={item.desc}
+                layout="responsive"
+                width={256}
+                height={144}
+                />
             </Transition>
           ))}
 
@@ -105,7 +115,7 @@ export default function ProgressSlider() {
           <button
             key={index}
             className="p-2 rounded focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 group"
-            onClick={() => { setActive(index) }}
+            onClick={() => { setActive(index), setProgress(0) }}
           >
             <span className="text-center flex flex-col items-center">
               <span className="flex items-center justify-center relative w-9 h-9 rounded-full bg-indigo-100 mb-2">
@@ -113,7 +123,7 @@ export default function ProgressSlider() {
               </span>
               <span className="block text-sm font-medium text-slate-900 mb-2">{item.desc}</span>
               <span className="block relative w-full bg-slate-200 h-1 rounded-full" role="progressbar" aria-valuenow={0}>
-                <span className="absolute inset-0 bg-indigo-500 rounded-[inherit]" style={{ width: '0%' }}></span>
+              <span className="absolute inset-0 bg-indigo-500 rounded-[inherit]" style={{ width: active === index ? `${progress}%` : '0%' }}></span>
               </span>
             </span>
           </button>
