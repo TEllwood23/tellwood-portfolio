@@ -14,15 +14,15 @@ const MainContent: React.FC = () => {
             bg-white rounded-lg
             border border-black shadow-md">
           <div className="basis-1/5">
-          <AboutMeCard />
-          <div className="flex flex-wrap">
-            <ProgressSlider />
-            <ContactForm />
+            <AboutMeCard />
+            <div className="flex flex-col md:flex-row">
+              <div className="w-full md:w-1/2">
+                <ProgressSlider />
+              </div>
+              <div className="w-full md:w-1/2">
+                <ContactForm />
+              </div>
           </div>
-
-
-{/*Carousel intended to go here, but currently rendering on "About Page" until it is working */}
-
           </div>
         </div>
       </div>

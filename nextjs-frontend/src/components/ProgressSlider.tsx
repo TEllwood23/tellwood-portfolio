@@ -78,9 +78,7 @@ export default function ProgressSlider() {
 
 
   return (
-    <div className="w-full max-w-5xl mx-auto text-center">
-      {/* Item image */}
-      <div className="transition-all duration-150 delay-300 ease-in-out">
+      <div className="w-full md:w-1/2 p-4 transition-all duration-150 delay-300 ease-in-out">
         <div className="relative flex flex-col items-center" ref={itemsRef}>
 
           {items.map((item, index) => (
@@ -105,14 +103,14 @@ export default function ProgressSlider() {
                   width={512}
                   height={288}
                   />
-               <div className="flex flex-row max-w-xs sm:max-w-sm md:max-w-3xl mx-auto gap-4 mt-4">
+               <div className="w-full md:w-1/2 p-4 flex flex-row max-w-xs sm:max-w-sm md:max-w-3xl mx-auto gap-4 mt-4">
                 {items.map((item, index) => (
                   <button
                     key={index}
                     className="p-2 rounded focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 group"
                     onClick={() => { setActive(index), setProgress(0) }}
                   >
-                    <span className="text-center flex flex-col items-center">
+                    {/* <span className="text-center flex flex-col items-center"> */}
                       <span className="flex items-center justify-center relative w-9 h-9 rounded-full bg-indigo-100 mb-2">
                         <Image src={item.buttonIcon} alt={item.desc} />
                       </span>
@@ -120,7 +118,7 @@ export default function ProgressSlider() {
                       <span className="block relative w-full bg-slate-200 h-1 rounded-full" role="progressbar" aria-valuenow={0}>
                       <span className="absolute inset-0 bg-indigo-500 rounded-[inherit]" style={{ width: active === index ? `${progress}%` : '0%' }}></span>
                       </span>
-                    </span>
+                    {/* </span> */}
                   </button>
                 ))}
                 </div>
@@ -131,6 +129,6 @@ export default function ProgressSlider() {
         </div>
 
       </div>
-    </div>
+
   )
 }
