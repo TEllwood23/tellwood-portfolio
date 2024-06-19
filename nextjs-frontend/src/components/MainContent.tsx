@@ -4,6 +4,7 @@ import React from 'react';
 import AboutMeCard from '../components/AboutMeCard'
 import Carousel from '../components/Carousel'
 import ProgressSlider from '../components/ProgressSlider';
+import ContactForm from '../components/ContactForm';
 
 const MainContent: React.FC = () => {
 
@@ -14,8 +15,9 @@ const MainContent: React.FC = () => {
             border border-black shadow-md">
           <div className="basis-1/5">
           <AboutMeCard />
-          <div>
+          <div className="flex flex-wrap">
             <ProgressSlider />
+            <ContactForm />
           </div>
 
 
