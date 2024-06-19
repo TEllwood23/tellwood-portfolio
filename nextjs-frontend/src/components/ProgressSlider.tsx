@@ -95,9 +95,9 @@ export default function ProgressSlider() {
             leaveTo="opacity-0 scale-95"
             beforeEnter={() => heightFix()}
             as="div"
-            className="flex justify-center"
+            className="flex flex-col justify-center"
           >
-                <Image
+            <Image
                   className="rounded-xl m-4"
                   src={item.img}
                   alt={item.desc}
@@ -105,31 +105,30 @@ export default function ProgressSlider() {
                   width={512}
                   height={288}
                   />
+               <div className="flex flex-row max-w-xs sm:max-w-sm md:max-w-3xl mx-auto gap-4 mt-4">
+                {items.map((item, index) => (
+                  <button
+                    key={index}
+                    className="p-2 rounded focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 group"
+                    onClick={() => { setActive(index), setProgress(0) }}
+                  >
+                    <span className="text-center flex flex-col items-center">
+                      <span className="flex items-center justify-center relative w-9 h-9 rounded-full bg-indigo-100 mb-2">
+                        <Image src={item.buttonIcon} alt={item.desc} />
+                      </span>
+                      <span className="block text-sm font-medium text-slate-900 mb-2">{item.desc}</span>
+                      <span className="block relative w-full bg-slate-200 h-1 rounded-full" role="progressbar" aria-valuenow={0}>
+                      <span className="absolute inset-0 bg-indigo-500 rounded-[inherit]" style={{ width: active === index ? `${progress}%` : '0%' }}></span>
+                      </span>
+                    </span>
+                  </button>
+                ))}
+                </div>
             </Transition>
           ))}
+        {/* Buttons */}
 
         </div>
-      </div>
-      {/* Buttons */}
-      <div className="max-w-xs sm:max-w-sm md:max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-
-        {items.map((item, index) => (
-          <button
-            key={index}
-            className="p-2 rounded focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 group"
-            onClick={() => { setActive(index), setProgress(0) }}
-          >
-            <span className="text-center flex flex-col items-center">
-              <span className="flex items-center justify-center relative w-9 h-9 rounded-full bg-indigo-100 mb-2">
-                <Image src={item.buttonIcon} alt={item.desc} />
-              </span>
-              <span className="block text-sm font-medium text-slate-900 mb-2">{item.desc}</span>
-              <span className="block relative w-full bg-slate-200 h-1 rounded-full" role="progressbar" aria-valuenow={0}>
-              <span className="absolute inset-0 bg-indigo-500 rounded-[inherit]" style={{ width: active === index ? `${progress}%` : '0%' }}></span>
-              </span>
-            </span>
-          </button>
-        ))}
 
       </div>
     </div>
