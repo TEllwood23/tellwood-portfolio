@@ -15,7 +15,7 @@ import SilderIcon04 from '/public/images/Icon_4.svg';
 
 export default function ProgressSlider() {
 
-  const duration: number = 3500
+  const duration: number = 13500
   const itemsRef = useRef<HTMLDivElement>(null)
   const frame = useRef<number>(0)
   const firstFrameTime = useRef(performance.now())
@@ -78,7 +78,7 @@ export default function ProgressSlider() {
 
 
   return (
-      <div className="w-full md:w-1/2 p-4 transition-all duration-150 delay-300 ease-in-out">
+      <div className="w-full md:w-1/2 p-4 transition-all duration-150 delay-300 ease-in-out mx-auto">
         <div className="relative flex flex-col items-center" ref={itemsRef}>
 
           {items.map((item, index) => (
@@ -96,7 +96,7 @@ export default function ProgressSlider() {
             className="flex flex-col justify-center"
           >
             <Image
-                  className="rounded-xl m-4"
+                  className="rounded-xl"
                   src={item.img}
                   alt={item.desc}
                   // layout="responsive"

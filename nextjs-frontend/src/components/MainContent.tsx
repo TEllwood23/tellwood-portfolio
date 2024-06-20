@@ -28,6 +28,26 @@ const MainContent: React.FC = () => {
   //     </div>
   // );
 
+  // return (
+  //   <div className="relative z-20 mt-96 min-h-2000">
+  //     <div className="flex flex-col md:flex-row min-h-full relative -2 block bg-white rounded-lg border border-black shadow-md">
+  //       <div className="basis-1/5">
+  //         <div>
+  //           <AboutMeCard />
+  //         </div>
+  //         <div className="flex flex-col md:flex-row">
+  //           <div className="w-full md:w-1/2">
+  //             <ProgressSlider />
+  //           </div>
+  //           <div className="w-full md:w-1/2">
+  //             <ContactForm />
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
+
   return (
     <div className="relative z-20 mt-96 min-h-2000">
       <div className="flex flex-col md:flex-row min-h-full relative -2 block bg-white rounded-lg border border-black shadow-md">
@@ -36,8 +56,10 @@ const MainContent: React.FC = () => {
             <AboutMeCard />
           </div>
           <div className="flex flex-col md:flex-row">
-            <div className="w-full md:w-1/2">
-              <ProgressSlider />
+            <div className="w-full md:w-1/2 px-4 md:px-8">
+              <div className="flex justify-center md:justify-start">
+                <ProgressSlider />
+              </div>
             </div>
             <div className="w-full md:w-1/2">
               <ContactForm />
@@ -47,7 +69,7 @@ const MainContent: React.FC = () => {
       </div>
     </div>
   );
-
 };
+
 
 export default MainContent;
